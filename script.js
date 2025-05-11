@@ -17,11 +17,11 @@ const promise = new Promise((resolve) => {
       })
       // Step 3: Multiply even numbers by 2 after 2 more seconds and update #output
       .then((evens) => {
-        return new Promise((resolve) => {
+        
           setTimeout(() => {
             const doubled = evens.map((num) => num * 2); // [4, 8]
             document.getElementById('output').innerText = doubled.join(',');
-            resolve();
+            
           }, 2000); // 2 seconds to meet test timing
-        });
+       
       });
