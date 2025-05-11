@@ -1,6 +1,8 @@
 //your JS code here. If required.
 let promise = new promise((resolve,reject)=> {
-	resolve([1,2,3,4]);
+	setTimeout(()=>{
+		resolve([1,2,3,4]);
+	},3000)
 })
 promise
 .then((data)=> {
