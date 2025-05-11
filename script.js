@@ -9,16 +9,15 @@ const promise = new Promise((resolve, reject) => {
         return new Promise((resolve) => {
           setTimeout(() => {
             const evens = data.filter((num) => num % 2 === 0);
-            document.getElementById('output').innerText = `${evens.join(',')}`;
-            resolve(evens);
+            resolve(evens); // pass [2, 4] to next then
           }, 1000);
         });
       })
       .then((evens) => {
         return new Promise((resolve) => {
           setTimeout(() => {
-            const doubled = evens.map((num) => num * 2);
-            // DO NOT update innerText here — the test only checks for '2,4'
+            const doubled = evens.map((num) => num * 2); // [4, 8]
+            document.getElementById('output').innerText = `${doubled.join(',')}`;
             resolve();
           }, 1000);
         });
