@@ -11,7 +11,7 @@
         return new Promise((resolve) => {
           setTimeout(() => {
             const evens = data.filter((num) => num % 2 === 0);
-            document.getElementById('output').innerText = `Even numbers: ${evens.join(', ')}`;
+            document.getElementById('output').innerText = `${evens.join(', ')}`;
             resolve(evens); // pass even numbers to next step
           }, 1000);
         });
@@ -21,7 +21,7 @@
         return new Promise((resolve) => {
           setTimeout(() => {
             const doubled = evens.map((num) => num * 2);
-            document.getElementById('output').innerText = `Doubled even numbers: ${doubled.join(', ')}`;
+            document.getElementById('output').innerText = `${doubled.join(', ')}`;
             resolve();
           }, 1000);
         });
